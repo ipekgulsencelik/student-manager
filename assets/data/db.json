@@ -1,0 +1,34 @@
+{
+    "students": [
+        {
+            "name": "Ege Ozaslan",
+            "instructor": "Orkun Durmaz",
+            "course": "Frontend Dev",
+            "score": "100"
+        },
+        {
+            "name": "Hicran Ertugral",
+            "instructor": "Orkun Durmaz",
+            "course": "Frontend Dev",
+            "score": "95"
+        },
+        {
+            "name": "Senay Senturk",
+            "instructor": "Orkun Durmaz",
+            "course": "Frontend Dev",
+            "score": "90"
+        },
+        {
+            "name": "Mais Baath",
+            "instructor": "Kartal Kaan Akdogan",
+            "course": ".Net Dev",
+            "score": "10"
+        },
+        {
+            "name": "Ipek Gulsen Celik",
+            "instructor": "Orkun Durmaz",
+            "course": "JavaScript",
+            "score": "50"
+        }
+    ]
+}
