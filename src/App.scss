@@ -67,20 +67,55 @@ $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
         margin-left: 6px;
       }
     }
+
+    .lds-dual-ring {
+      display: inline-block;
+      padding: 10px 10px 10px 5px;
+    }
+
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #4E6C50;
+      border-color: #4E6C50 transparent #4E6C50 transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
-  .btn-primary {
+  .btn {
     width: 200px;
     padding: 7px 20px;
     border: none;
     border-radius: 7px;
-    background-color: $primary-color;
     color: $light-color;
     font-weight: 800;
     cursor: pointer;
+    background-color: $primary-color;
 
     &:hover {
       opacity: 0.9;
+    }
+
+
+    .btn-disabled {
+      background-color: #72aca0bd;
+
+      &:hover {
+        background: #48b09b;
+      }
     }
   }
 
@@ -167,6 +202,42 @@ $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
         width: 240px;
         margin: 0;
         padding: 7px 12px;
+
+        .student-card-buttons {
+          // padding: 10px;
+          height: fit-content;
+          cursor: pointer;
+          display: flex;
+          justify-content: flex-end;
+          font-size: 20px;
+
+          .delete-button {
+            color: #980000b7;
+          }
+
+          .edit-button {
+            color: #005698b7;
+          }
+
+          .save-button {
+            color: #379237;
+          }
+
+          span {
+            padding: 10px 10px 10px 5px;
+          }
+        }
+
+        .student-card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 10px;
+        }
+
+        [contenteditable]:focus {
+          outline: 0px solid transparent;
+        }
 
         .student-data {
           font-weight: 500;

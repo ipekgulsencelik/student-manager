@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StudentCard from "../student-card/StudentCard";
 
-const StudentList = ({ studentList }) => {
+const StudentList = ({ studentList, deleteStudent, updateStudent, handleCurrentStudentInputProp }) => {
 
     // const [searchInput, setSearchInput] = useState("");
 
@@ -58,11 +58,11 @@ const StudentList = ({ studentList }) => {
                     */}
                     {searchTerm
                         ? (searchResult.length
-                            ? searchResult.map((student, index) => <StudentCard student={student} key={index} />)
+                            ? searchResult.map((student, index) => <StudentCard student={student} key={index} deleteStudent={deleteStudent} updateStudent={updateStudent} handleCurrentStudentInputProp={handleCurrentStudentInputProp} />)
                             : <div className="message">
                                 <h4>Student Not Found</h4>
                             </div>)
-                        : studentList.map((student, index) => <StudentCard student={student} key={index} />)}
+                        : studentList.map((student, index) => <StudentCard student={student} key={index} deleteStudent={deleteStudent} updateStudent={updateStudent} handleCurrentStudentInputProp={handleCurrentStudentInputProp} />)}
                 </div>
             </div>
         </>

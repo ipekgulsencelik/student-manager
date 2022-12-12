@@ -1,6 +1,6 @@
 import React from "react";
 
-const StudentForm = ({ student, handleStudentInputProp, isStudentValid, addStudent }) => {
+const StudentForm = ({ student, handleStudentInputProp, isStudentValid, addStudent, isStudentLoading }) => {
     return (
         <>
             <form action="">
@@ -33,7 +33,7 @@ const StudentForm = ({ student, handleStudentInputProp, isStudentValid, addStude
                 </div>
                 <div className="input-control">
                     <input
-                        type="text"
+                        type="number"
                         onChange={(event) => handleStudentInputProp({ score: event.target.value })}
                         value={student.score}
                         placeholder="Enter score..."
@@ -42,9 +42,10 @@ const StudentForm = ({ student, handleStudentInputProp, isStudentValid, addStude
                 </div>
 
                 <button
-                    className="btn btn-primary"
+                    disabled={isStudentLoading}
+                    className={isStudentLoading ? "btn btn-disabled" : "btn"}
                     onClick={addStudent}>
-                    Add Student
+                    {isStudentLoading ? (<div className="lds-dual-ring align-right-top"></div>) : ("Add Student")}
                 </button>
             </form>
         </>
