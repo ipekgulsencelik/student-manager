@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import StudentCard from "../student-card/StudentCard";
 
-const StudentList = ({ studentList, deleteStudent, updateStudent, handleCurrentStudentInputProp }) => {
+/**
+ * @param {{
+*  studentList: Student[]
+*  deleteStudent: (id: string) => void
+*  updateStudent: (id: string) => void
+*  handleCurrentStudentInputProp: (params: InputProps) => void
+* }} param0 
+ * @returns {JSX.Element}
+ */
+const StudentList = ({
+    studentList,
+    deleteStudent,
+    updateStudent,
+    handleCurrentStudentInputProp,
+}) => {
 
     // const [searchInput, setSearchInput] = useState("");
 
@@ -58,11 +72,27 @@ const StudentList = ({ studentList, deleteStudent, updateStudent, handleCurrentS
                     */}
                     {searchTerm
                         ? (searchResult.length
-                            ? searchResult.map((student, index) => <StudentCard student={student} key={index} deleteStudent={deleteStudent} updateStudent={updateStudent} handleCurrentStudentInputProp={handleCurrentStudentInputProp} />)
+                            ? searchResult.map((student, index) => (
+                                <StudentCard
+                                    student={student}
+                                    key={index}
+                                    deleteStudent={deleteStudent}
+                                    updateStudent={updateStudent}
+                                    handleCurrentStudentInputProp={handleCurrentStudentInputProp}
+                                />
+                            ))
                             : <div className="message">
                                 <h4>Student Not Found</h4>
                             </div>)
-                        : studentList.map((student, index) => <StudentCard student={student} key={index} deleteStudent={deleteStudent} updateStudent={updateStudent} handleCurrentStudentInputProp={handleCurrentStudentInputProp} />)}
+                        : studentList.map((student, index) => (
+                            <StudentCard
+                                student={student}
+                                key={index}
+                                deleteStudent={deleteStudent}
+                                updateStudent={updateStudent}
+                                handleCurrentStudentInputProp={handleCurrentStudentInputProp}
+                            />
+                        ))}
                 </div>
             </div>
         </>

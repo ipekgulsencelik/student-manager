@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineCheck } from "react-icons/ai";
 
-const StudentCard = ({ student, deleteStudent, updateStudent, handleCurrentStudentInputProp }) => {
+/**
+ * @param {{
+ *  studentList: Student[]
+ *  deleteStudent: (id: string) => void
+ *  updateStudent: (id: string) => void
+ *  handleCurrentStudentInputProp: (params: InputProps) => void
+ * }} param0 
+ * @returns {JSX.Element}
+ */
+const StudentCard = ({
+    student,
+    deleteStudent,
+    updateStudent,
+    handleCurrentStudentInputProp,
+}) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isEditable, setIsEditable] = useState(false);
